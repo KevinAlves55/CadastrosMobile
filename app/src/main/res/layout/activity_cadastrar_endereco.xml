@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarEndereco"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CadastroUsuario"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COMPLETE SEU ENDEREÇO"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bro"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/txtCep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="DIGITE UM CEP"
+                android:inputType="text"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"/>
+
+            <EditText
+                android:id="@+id/txtNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/digite_o_numero"
+                android:inputType="text"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"/>
+
+            <EditText
+                android:id="@+id/txtComplemento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/digite_um_complemento"
+                android:inputType="text"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"/>
+
+            <Button
+                android:id="@+id/btnCadastrarEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"
+                android:text="@string/cadastrar_button_text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

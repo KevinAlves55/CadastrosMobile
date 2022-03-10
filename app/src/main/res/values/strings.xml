@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">LIBRI Aprendizado</string>
+    <string name="cadastro_nome_text">DIGITE SEU NOME</string>
+    <string name="cadastro_sobremone_text">DIGITE SEU SOBRENOME</string>
+    <string name="cadastro_login_text">DIGITE UM LOGIN</string>
+    <string name="cadastro_senha_text">DIGITE UMA SENHA</string>
+    <string name="cadastrar_button_text">CADASTRAR</string>
+    <string name="titulo_cadastro_usuario">CADASTRO</string>
+    <string name="mensagem_cadastro_usuario">VOCÊ ESTÁ SE CADASTRANDO EM NOSSO APP</string>
+    <string name="cadUsuario">CADASTRAR</string>
+    <string name="cadastro_ok">CADASTRADO COM SUCESSO</string>
+    <string name="cadastro_erro">ERRO AO SE CADASTRAR</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="login_usuario">LOGIN</string>
+    <string name="insira_seu_usuario">INSIRA SEU USUARIO</string>
+    <string name="insira_sua_senha">INSIRA SUA SENHA</string>
+    <string name="complete_seu_cadastro">COMPLETE SEU CADASTRO</string>
+    <string name="digite_um_complemento">DIGITE UM COMPLEMENTO</string>
+    <string name="digite_o_numero">DIGITE O NUMERO</string>
+    <string name="titulo_cadastro_endereco">CADASTRO DE ENDEREÇO</string>
+    <string name="mensagem_cadastro_endreeco">VOCÊ ESTÁ CADASTRANDO UM ENDEREÇO</string>
+</resources>
