@@ -3,9 +3,11 @@ package com.example.libriaprendizado;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.libriaprendizado.database.SQLHelper;
@@ -17,6 +19,7 @@ public class CadastroUsuario extends AppCompatActivity {
     private EditText txtLogin;
     private EditText txtSenha;
     private Button btnCadastrar;
+    private TextView voltarLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,14 @@ public class CadastroUsuario extends AppCompatActivity {
         this.txtLogin = findViewById(R.id.txtLogin);
         this.txtSenha = findViewById(R.id.txtSenha);
         this.btnCadastrar = findViewById(R.id.btnCadastrarUsuario);
+        this.voltarLogin = findViewById(R.id.voltarLogin);
+
+        voltarLogin.setOnClickListener(view -> {
+
+            Intent intent = new Intent(CadastroUsuario.this, MainActivity.class);
+            startActivity(intent);
+
+        });
 
         btnCadastrar.setOnClickListener(view -> {
 
@@ -48,13 +59,19 @@ public class CadastroUsuario extends AppCompatActivity {
                         String sLogin = txtLogin.getText().toString();
                         String sSenha = txtSenha.getText().toString();
 
-                        boolean cadastroUsuario = SQLHelper.getInstance(this)
+                        int cod_usuario = SQLHelper.getInstance(this)
                                 .addUser(sNome, sSobreNome, sLogin, sSenha);
 
-                        if(cadastroUsuario){
+                        if(cod_usuario > 0){
+
                             Toast.makeText(this,
                                     R.string.cadastro_ok,
                                     Toast.LENGTH_LONG).show();
+
+                            Intent intent  = new Intent(CadastroUsuario.this, CadastrarEndereco.class);
+                            intent.putExtra("COD_USUARIO", cod_usuario);
+                            startActivity(intent);
+
                         }else{
                             Toast.makeText(this,
                                     R.string.cadastro_erro,

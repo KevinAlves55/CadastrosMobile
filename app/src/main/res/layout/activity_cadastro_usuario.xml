@@ -4,9 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CadastroUsuario"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,6 +82,17 @@
                 android:layout_marginStart="35dp"
                 android:layout_marginEnd="35dp"
                 android:text="@string/cadastrar_button_text"/>
+
+            <TextView
+                android:id="@+id/voltarLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Já tenho um login"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:cursorVisible="true"/>
         </LinearLayout>
 
     </LinearLayout>

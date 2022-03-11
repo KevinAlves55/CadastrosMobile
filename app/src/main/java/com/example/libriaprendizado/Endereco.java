@@ -1,6 +1,6 @@
 package com.example.libriaprendizado;
 
-public class Livro {
+public class Endereco {
 
     private String cep, numero, complemento;
 

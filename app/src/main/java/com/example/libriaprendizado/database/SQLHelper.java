@@ -58,7 +58,7 @@ public class SQLHelper extends SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
     }//FIM DO MÉTODO onUpgrade
 
-    public boolean addUser(String nome, String sobrenome, String login, String senha) {
+    public int addUser(String nome, String sobrenome, String login, String senha) {
 
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
@@ -73,18 +73,18 @@ public class SQLHelper extends SQLiteOpenHelper
             values.put("login", login);
             values.put("senha", senha);
 
-            sqLiteDatabase.insertOrThrow("tbl_usuario",
+            int cod_usuario = (int) sqLiteDatabase.insertOrThrow("tbl_usuario",
                     null,
                     values);
             sqLiteDatabase.setTransactionSuccessful();
 
-            return true;
+            return cod_usuario;
 
 
         }catch (Exception e){
 
             Log.d("SQLERRO", e.getMessage());
-            return false;
+            return 0;
 
         }finally {
 

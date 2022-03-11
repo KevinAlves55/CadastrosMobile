@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //AÇÃO LOGADO
                 startActivity(
-                        new Intent(MainActivity.this, CadastrarEndereco.class)
+                        new Intent(MainActivity.this, Feed.class)
                 );
 
             }else{

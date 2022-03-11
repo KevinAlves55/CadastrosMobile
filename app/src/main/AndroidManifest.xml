@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LIBRIAprendizado">
         <activity
+            android:name=".Feed"
+            android:exported="false" />
+        <activity
             android:name=".CadastrarEndereco"
             android:exported="false" />
-         <activity
-         android:name=".CadastroUsuario"
-         android:exported="false" />
+        <activity
+            android:name=".CadastroUsuario"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

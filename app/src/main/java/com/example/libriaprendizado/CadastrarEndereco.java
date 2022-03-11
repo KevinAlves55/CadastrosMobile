@@ -1,9 +1,14 @@
 package com.example.libriaprendizado;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,13 +43,23 @@ public class CadastrarEndereco extends AppCompatActivity {
                         String sNumero = txtNumero.getText().toString();
                         String sComplemento = txtComplemento.getText().toString();
 
+                        int cod_usuario = 0 ;
+                        if(getIntent().hasExtra("COD_USUARIO")){
+                            Bundle extras = getIntent().getExtras();
+                            cod_usuario = extras.getInt("COD_USUARIO");
+                        }
+
                         boolean cadastroLivro = SQLHelper.getInstance(this)
-                                .addEndereco(2, sCep, sNumero, sComplemento);
+                                .addEndereco(cod_usuario, sCep, sNumero, sComplemento);
 
                         if(cadastroLivro){
                             Toast.makeText(this,
                                     R.string.cadastro_ok,
                                     Toast.LENGTH_LONG).show();
+
+                            Intent intent  = new Intent(CadastrarEndereco.this, Feed.class);
+                            startActivity(intent);
+
                         }else{
                             Toast.makeText(this,
                                     R.string.cadastro_erro,
@@ -60,4 +75,53 @@ public class CadastrarEndereco extends AppCompatActivity {
         });//FIM DO SETONCLICKLISTENER
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }//FIM DO MÉTODO ONCREATEOPTIONSMENU
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        Log.d("IDITEM", String.valueOf(item.getItemId()));
+
+        switch (item.getItemId()){
+
+            case R.id.menu_cadastrar_endereco:
+                startActivity(
+                        new Intent(
+                                this,
+                                CadastrarEndereco.class
+                        )
+                );
+                break;
+
+            case R.id.menu_feed_livro:
+                startActivity(
+                        new Intent(
+                                this,
+                                Feed.class
+                        )
+                );
+                break;
+
+            case R.id.menu_sair:
+                startActivity(
+                        new Intent(
+                                this,
+                                MainActivity.class
+                        )
+                );
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }//FIM DO MENU
+
 }
